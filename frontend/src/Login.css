@@ -1,0 +1,193 @@
+/* src/Login.css */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a3a8f 0%, #2c5aa0 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.login-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #e0e0e0;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #1a3a8f;
+  padding-bottom: 20px;
+}
+
+.unach-logo {
+  margin-bottom: 15px;
+}
+
+.logo-main {
+  background: #1a3a8f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.login-header h1 {
+  color: #1a3a8f;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.login-header h2 {
+  color: #666;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.login-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.input-label {
+  display: block;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #000; /* Asegura que el texto sea negro */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1a3a8f;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.1);
+  color: #000; /* Asegura que el texto sea negro al enfocar */
+}
+
+.form-input::placeholder {
+  color: #999;
+}
+
+/* Asegurar que el texto ingresado sea negro */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover, 
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fafafa inset !important;
+}
+
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background: #1a3a8f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #15317a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(26, 58, 143, 0.3);
+}
+
+.login-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.forgot-password {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.forgot-password a {
+  color: #1a3a8f;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: #15317a;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 25px;
+    margin: 10px;
+  }
+  
+  .login-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .login-header h2 {
+    font-size: 0.9rem;
+  }
+}
+/* src/Login.css */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a3a8f 0%, #2c5aa0 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  width: 100vw; /* Asegura que ocupe todo el ancho */
+  margin: 0; /* Elimina márgenes */
+}
+
+.login-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px; /* Esto limita el ancho máximo, pero está bien */
+  border: 1px solid #e0e0e0;
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+/* El resto de tu CSS del Login se mantiene igual... */

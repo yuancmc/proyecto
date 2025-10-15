@@ -1,0 +1,1141 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Admin Styles */
+.dashboard-admin {
+  min-height: 100vh;
+  background: #f5f6fa;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-header {
+  background: #1a3a8f;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  background: white;
+  color: #1a3a8f;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.admin-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background: white;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  min-height: 100%;
+}
+
+.sidebar-nav {
+  padding: 1rem 0;
+}
+
+.nav-item {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-left: 4px solid transparent;
+  color: #333 !important; /* Texto negro */
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-item:hover {
+  background: #f8f9fa;
+  color: #333 !important; /* Negro también al hover */
+}
+
+.nav-item.active {
+  background: #e3f2fd;
+  border-left-color: #1a3a8f;
+  color: #1a3a8f !important; /* Azul cuando está activo */
+  font-weight: bold;
+}
+
+/* Para todos los sidebars */
+.admin-sidebar .nav-item,
+.docente-sidebar .nav-item, 
+.alumno-sidebar .nav-item {
+  color: #333 !important;
+}
+
+.admin-sidebar .nav-item:hover,
+.docente-sidebar .nav-item:hover,
+.alumno-sidebar .nav-item:hover {
+  color: #333 !important;
+}
+
+.admin-sidebar .nav-item.active,
+.docente-sidebar .nav-item.active,
+.alumno-sidebar .nav-item.active {
+  color: #1a3a8f !important;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.metric-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.metric-icon {
+  font-size: 2rem;
+}
+
+.metric-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a3a8f;
+}
+
+.content-area {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+/* Laboratorios Grid */
+.laboratorios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.laboratorio-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: white;
+  width: 100%;
+}
+
+.laboratorio-card h3 {
+  margin: 0 0 1rem 0;
+  color: #1a3a8f;
+}
+
+.lab-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.estado {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.estado.disponible {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estado.ocupado {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.estado.mantenimiento {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.lab-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.gestionar-btn, .action-btn {
+  background: #1a3a8f;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.gestionar-btn:hover, .action-btn:hover {
+  background: #15317a;
+}
+
+/* Tablas */
+.usuarios-table {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.usuarios-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.usuarios-table th,
+.usuarios-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.usuarios-table th {
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #333;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.badge.docente {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.badge.alumno {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.btn-editar {
+  background: #ffc107;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Info Cards */
+.info-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #1a3a8f;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.report-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Solicitudes de permisos */
+.solicitud-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.solicitud-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.solicitud-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-aprobar {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-rechazar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Dashboard Alumno Styles */
+.dashboard-alumno {
+  min-height: 100vh;
+  background: #f5f6fa;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.alumno-header {
+  background: #28a745;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.alumno-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.alumno-sidebar {
+  width: 280px;
+  background: white;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  min-height: 100%;
+}
+
+.alumno-main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* QR Section */
+.qr-section h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.alumno-info-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.alumno-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.matricula {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.qr-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.qr-container {
+  text-align: center;
+  width: 100%;
+}
+
+.qr-code {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.qr-code img {
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-instructions {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Asistencias */
+.asistencias-container h4 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.asistencias-list {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.asistencia-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 1rem;
+  width: 100%;
+}
+
+.asistencia-item:last-child {
+  border-bottom: none;
+}
+
+.estado-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.estado-badge.presente {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estado-badge.ausente {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.asistencia-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.asistencia-fecha {
+  font-weight: bold;
+  color: #333;
+}
+
+.asistencia-materia {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Horarios */
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.horario-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.horario-card h3 {
+  color: #28a745;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 0.5rem;
+}
+
+.clase-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #28a745;
+}
+
+.clase-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.clase-item span {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+/* Materias */
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.materia-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-top: 4px solid #28a745;
+  width: 100%;
+}
+
+.materia-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.materia-card p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.materia-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Perfil */
+.perfil-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.perfil-avatar {
+  width: 80px;
+  height: 80px;
+  background: #28a745;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.perfil-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.carrera {
+  color: #666;
+  margin: 0;
+}
+
+.perfil-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.detail-group h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 0.5rem;
+}
+
+.detail-group p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+/* Dashboard Docente Styles */
+.dashboard-docente {
+  min-height: 100vh;
+  background: #f5f6fa;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.docente-header {
+  background: #ff6b35;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.docente-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.docente-sidebar {
+  width: 280px;
+  background: white;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  min-height: 100%;
+}
+
+.docente-main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Horarios Docente */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  width: 100%;
+}
+
+.section-header h2 {
+  color: #333;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fecha-actual {
+  color: #666;
+  font-weight: 500;
+}
+
+.export-btn {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.export-btn:hover {
+  background: #e55a2b;
+}
+
+.laboratorios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.laboratorio-card-docente {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 100%;
+}
+
+.laboratorio-card-docente:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.laboratorio-card-docente h3 {
+  color: #ff6b35;
+  margin: 0 0 1rem 0;
+  border-bottom: 2px solid #ff6b35;
+  padding-bottom: 0.5rem;
+}
+
+.lab-info-docente p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.ver-asistencia-btn {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.ver-asistencia-btn:hover {
+  background: #e55a2b;
+}
+
+/* Asistencias */
+.asistencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.asistencia-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #ff6b35;
+  width: 100%;
+}
+
+.asistencia-card h3 {
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.asistencia-info p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.asistencia-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.btn-tomar-asistencia {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.btn-ver-historial {
+  background: #17a2b8;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.historial-asistencias {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.asistencias-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.asistencias-table th,
+.asistencias-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.asistencias-table th {
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #333;
+}
+
+.porcentaje.alto {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.porcentaje.bajo {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Material Didáctico */
+.upload-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  border: 2px dashed #e0e0e0;
+  width: 100%;
+}
+
+.upload-area {
+  text-align: center;
+  padding: 2rem;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  margin: 1rem 0;
+  background: #f8f9fa;
+  width: 100%;
+}
+
+.btn-select-files {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.file-types {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.material-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: white;
+  width: 100%;
+}
+
+.material-icon {
+  font-size: 1.5rem;
+}
+
+.material-info {
+  flex: 1;
+}
+
+.material-info strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.material-info span {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.1rem;
+}
+
+.material-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-descargar {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.btn-eliminar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* Reportes */
+.reportes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.reporte-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.reporte-card h3 {
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.reporte-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.periodo-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.btn-generar-reporte {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.estadisticas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.estadistica-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.estadistica-valor {
+  font-weight: bold;
+  color: #ff6b35;
+}
+
+.export-options {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.btn-export {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.btn-export:hover {
+  background: #5a6268;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .admin-sidebar,
+  .docente-sidebar,
+  .alumno-sidebar {
+    width: 200px;
+  }
+  
+  .asistencia-actions {
+    flex-direction: column;
+  }
+  
+  .material-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .export-options {
+    flex-direction: column;
+  }
+  
+  .qr-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .perfil-details {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-header,
+  .docente-header,
+  .alumno-header {
+    padding: 1rem;
+  }
+  
+  .header-left h1 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-sidebar,
+  .docente-sidebar,
+  .alumno-sidebar {
+    width: 180px;
+  }
+  
+  .admin-main,
+  .docente-main,
+  .alumno-main {
+    padding: 1rem;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .laboratorios-grid,
+  .asistencias-grid,
+  .reportes-grid {
+    grid-template-columns: 1fr;
+  }
+}
